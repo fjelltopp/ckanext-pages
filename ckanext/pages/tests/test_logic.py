@@ -102,8 +102,6 @@ class TestPages(helpers.FunctionalTestBase):
         assert_in('Add page</a>', response.body)
 
     def test_unicode(self):
-        #import pydevd_pycharm
-        #pydevd_pycharm.settrace('172.17.0.1', port=1234, stdoutToServer=True, stderrToServer=True)
         env = {'REMOTE_USER': self.user['name'].encode('ascii')}
         response = self.app.post(
             url=toolkit.url_for('pages_edit', page='/test_unicode_page'),
