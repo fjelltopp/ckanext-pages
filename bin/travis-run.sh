@@ -21,4 +21,4 @@ nosetests --ckan \
           ckanext/pages
 
 # strict linting
-flake8 . --count --max-complexity=10 --max-line-length=127 --statistics --exclude ckan,{{ project }}
+flake8 . --count --max-complexity=15 --max-line-length=127 --statistics --exclude ckan,{{ project }}
