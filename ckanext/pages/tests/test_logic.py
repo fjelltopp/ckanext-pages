@@ -116,6 +116,6 @@ class TestPages(helpers.FunctionalTestBase):
         )
         response = response.follow(extra_environ=env)
         assert_in(u'<title>Tïtlé - CKAN</title>', response.unicode_body)
-        assert_in(u'<a href="/pages/page_unicode">Tïtlé</a>', response.unicode_body)
+        assert_in(u'<a href="/en/pages/page_unicode">Tïtlé</a>', response.unicode_body)
         assert_in(u'<h1 class="page-heading">Tïtlé</h1>', response.unicode_body)
         assert_in(u'<p>Çöñtéñt</p>', response.unicode_body)
