@@ -269,8 +269,7 @@ class PagesController(p.toolkit.BaseController):
                 if not height.endswith('%') and not height.endswith('px'):
                     height = height + 'px'
                 align = element.attrib.pop('align', 'none')
-                style = "width: {}; height: {}; float: {}; overflow: auto;" + \
-                        " vertical-align:middle; position:relative".format(width, height, align)
+                style = "width: %s; height: %s; float: %s; overflow: auto; vertical-align:middle; position:relative" % (width, height, align)
                 element.attrib['style'] = style
                 element.attrib['class'] = 'pages-embed'
                 view = p.toolkit.get_action('resource_view_show')({}, {'id': iframe_src[-36:]})
@@ -293,9 +292,7 @@ class PagesController(p.toolkit.BaseController):
                     view_id=view['id']
                 )
                 message = _('Your browser does not support iframes.')
-                resource_view_html = '<iframe src="{}" frameborder="0" width="100%" ' + \
-                    'height="100%" style="display:block"> <p>{}</p> ' + \
-                    '</iframe>'.format(src, message)
+                resource_view_html = '<iframe src="{src}" frameborder="0" width="100%" height="100%" style="display:block"> <p>{message}</p> </iframe>'.format(src=src, message=message)
 
             view_element = lxml.html.fromstring(resource_view_html)
             element.append(view_element)
