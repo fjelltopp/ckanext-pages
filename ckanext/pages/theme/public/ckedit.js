@@ -11,20 +11,6 @@ this.ckan.module('ckedit', function (jQuery, _) {
 
     _onReady: function() {
       var config = {};
-      config.toolbarGroups = [
-        { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-        { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-        { name: 'links' },
-        { name: 'insert' },
-        { name: 'forms' },
-        { name: 'tools' },
-        { name: 'document',	   groups: [ 'document', 'doctools' ] },
-        { name: 'others' },
-        '/',
-        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-        { name: 'paragraph',   groups: [ 'list', 'blocks', 'align', 'bidi' ] },
-        { name: 'styles' },
-      ];
 
       // Remove some buttons, provided by the standard plugins, which we don't
       // need to have in the Standard(s) toolbar.
@@ -37,6 +23,7 @@ this.ckan.module('ckedit', function (jQuery, _) {
       config.removeDialogTabs = 'image:advanced;link:advanced';
       config.filebrowserUploadUrl = this.options.site_url + 'pages_upload';
       config.extraPlugins = 'divarea,ckanview';
+      config.removePlugins = 'sourcedialog'
       config.height = '400px';
       config.customConfig = false;
 
