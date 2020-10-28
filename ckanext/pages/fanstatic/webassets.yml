@@ -1,0 +1,12 @@
+bootstrap:
+    contents:
+        - css/bootstrap.css
+
+medium-editor:
+    contents:
+        - css/medium-editor.css
+        - js/medium-editor.js
+
+pages-editor:
+    contents:
+      - pages-editor.js 
