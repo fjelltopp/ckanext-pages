@@ -31,8 +31,8 @@ def build_pages_nav_main(*args):
 
     # Different CKAN versions use different route names - gotta catch em all!
     about_menu_routes = ['about', 'home.about']
-    group_menu_routes = ['group_index', 'home.group_index']
-    org_menu_routes = ['organizations_index', 'home.organizations_index']
+    group_menu_routes = ['group_index', 'home.group_index', 'group.index']
+    org_menu_routes = ['organizations_index', 'home.organizations_index', 'organization.index']
 
     new_args = []
     for arg in args:
