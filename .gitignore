@@ -10,3 +10,6 @@ dist/
 distribute-*
 /CHANGELOG.html
 /README.html
+
+# Translations
+*.pot

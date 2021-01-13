@@ -8,20 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-pages 0.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-20 06:40+0000\n"
-"PO-Revision-Date: 2019-12-20 06:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-11-19 14:10+0000\n"
+"PO-Revision-Date: 2020-12-15 10:31+0300\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.7.0\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ckanext/pages/actions.py:27
 msgid "Page name already exists in database"
-msgstr "Ce nom de page existe déjà dans la base de données."
+msgstr "Ce nom de page existe déjà dans la base de données"
 
 #: ckanext/pages/actions.py:192 ckanext/pages/actions.py:215
 #: ckanext/pages/actions.py:223 ckanext/pages/actions.py:231
@@ -31,12 +32,13 @@ msgstr "Ce nom de page existe déjà dans la base de données."
 #: ckanext/pages/actions.py:291 ckanext/pages/actions.py:299
 #: ckanext/pages/actions.py:308
 msgid "Not authorized to see this page"
-msgstr "Vous ne disposez pas des droits nécessaires pour afficher cette page."
+msgstr "Vous ne disposez pas des droits nécessaires pour afficher cette page"
 
 #: ckanext/pages/auth.py:55
 #, python-format
 msgid "User %s not authorized to read this page"
-msgstr "L’utilisateur %s ne dispose pas des droits nécessaires pour afficher cette page."
+msgstr ""
+"L’utilisateur %s ne dispose pas des droits nécessaires pour afficher cette page"
 
 #: ckanext/pages/controller.py:19 ckanext/pages/controller.py:73
 msgid "Organization not found"
@@ -45,27 +47,28 @@ msgstr "Organisation non trouvée"
 #: ckanext/pages/controller.py:21
 #, python-format
 msgid "Unauthorized to read organization %s"
-msgstr "Vous ne disposez pas des droits nécessaires pour afficher l’organisation %s."
+msgstr ""
+"Vous ne disposez pas des droits nécessaires pour afficher l’organisation %s"
 
 #: ckanext/pages/controller.py:69 ckanext/pages/controller.py:167
-#: ckanext/pages/controller.py:358
+#: ckanext/pages/controller.py:360
 msgid "Page Not Found"
 msgstr "Page non trouvée"
 
 #: ckanext/pages/controller.py:71 ckanext/pages/controller.py:169
-#: ckanext/pages/controller.py:360
+#: ckanext/pages/controller.py:362
 msgid "Unauthorized to delete page"
-msgstr "Vous ne disposez pas des droits nécessaires pour supprimer cette page."
+msgstr "Vous ne disposez pas des droits nécessaires pour supprimer cette page"
 
 #: ckanext/pages/controller.py:133 ckanext/pages/controller.py:171
-#: ckanext/pages/controller.py:362
+#: ckanext/pages/controller.py:364
 msgid "Group not found"
 msgstr "Groupe non trouvé"
 
 #: ckanext/pages/controller.py:135
 #, python-format
 msgid "Unauthorized to read group %s"
-msgstr "Vous ne disposez pas des droits nécessaires pour afficher le groupe %s."
+msgstr "Vous ne disposez pas des droits nécessaires pour afficher le groupe %s"
 
 #: ckanext/pages/controller.py:282
 msgid "ERROR: View not found {view_id}"
@@ -75,18 +78,19 @@ msgstr "ERREUR : affichage non trouvé {view_id}"
 msgid "Your browser does not support iframes."
 msgstr "Votre navigateur n’est pas compatible avec les iframes."
 
-#: ckanext/pages/controller.py:401
+#: ckanext/pages/controller.py:403
 msgid "Unauthorized to create or edit a page"
-msgstr "Vous ne disposez pas des droits nécessaires pour créer ou modifier une page."
+msgstr ""
+"Vous ne disposez pas des droits nécessaires pour créer ou modifier une page"
 
-#: ckanext/pages/controller.py:420
+#: ckanext/pages/controller.py:422
 msgid "Only Posting is availiable"
-msgstr "Seule la publication est disponible."
+msgstr "Seule la publication est disponible"
 
-#: ckanext/pages/controller.py:425
+#: ckanext/pages/controller.py:427
 #, python-format
 msgid "Unauthorized to upload file %s"
-msgstr "Vous ne disposez pas des droits nécessaires pour transférer le fichier %s."
+msgstr "Vous ne disposez pas des droits nécessaires pour transférer le fichier %s"
 
 #: ckanext/pages/theme/templates_group/group/read_base.html:5
 #: ckanext/pages/theme/templates_main/ckanext_pages/edit_base.html:3
@@ -116,11 +120,13 @@ msgid "What are Pages?"
 msgstr "Qu’est-ce que Pages ?"
 
 #: ckanext/pages/theme/templates_main/ckanext_pages/base.html:18
+#, fuzzy
 msgid ""
-" <p>Pages are are simple way to add extra pages to your ckan instance. "
-"You can assign an order to them.</p> "
+"<p>Pages are are simple way to add extra pages to your ckan instance. You can "
+"assign an order to them.</p>"
 msgstr ""
-" <p>Pages est une méthode simple pour ajouter des pages supplémentaires à votre instance ckan. Vous pouvez les classer selon un certain ordre.</p> "
+" <p>Pages est une méthode simple pour ajouter des pages supplémentaires à votre "
+"instance ckan. Vous pouvez les classer selon un certain ordre.</p>"
 
 #: ckanext/pages/theme/templates_main/ckanext_pages/base_form.html:31
 msgid "Add Blog Article"
@@ -235,7 +241,7 @@ msgstr "Modifier"
 #: ckanext/pages/theme/templates_main/ckanext_pages/snippets/pages_list.html:51
 #: ckanext/pages/theme/templates_main/ckanext_pages/snippets/pages_list.html:71
 msgid "This page currently has no content"
-msgstr "Cette page ne contient actuellement aucun contenu."
+msgstr "Cette page ne contient actuellement aucun contenu"
 
 #: ckanext/pages/theme/templates_main/ckanext_pages/blog.html:51
 msgid "More"
@@ -250,7 +256,8 @@ msgid "Blog Articles"
 msgstr "Articles de blog"
 
 #: ckanext/pages/theme/templates_main/ckanext_pages/blog_edit_base.html:12
-msgid " <p>Add blog articles to CKAN here.</p> "
+#, fuzzy
+msgid "<p>Add blog articles to CKAN here.</p>"
 msgstr " <p>Ajoutez des articles de blog à CKAN ici.</p> "
 
 #: ckanext/pages/theme/templates_main/ckanext_pages/blog_list.html:5
@@ -272,8 +279,8 @@ msgstr "Modifier une page"
 
 #: ckanext/pages/theme/templates_main/ckanext_pages/snippets/pages_list.html:80
 msgid "There are currently no blog articles here"
-msgstr "Il n’existe actuellement aucun article de blog ici."
+msgstr "Il n’existe actuellement aucun article de blog ici"
 
 #: ckanext/pages/theme/templates_main/ckanext_pages/snippets/pages_list.html:82
 msgid "There are currently no pages here"
-msgstr "Il n’existe actuellement aucune page ici."
+msgstr "Il n’existe actuellement aucune page ici"
