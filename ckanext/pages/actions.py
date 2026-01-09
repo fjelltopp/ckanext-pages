@@ -5,12 +5,12 @@ import ckan.lib.navl.dictization_functions as df
 import ckan.lib.uploader as uploader
 import ckan.lib.helpers as h
 from ckan.plugins import toolkit as tk
-from HTMLParser import HTMLParser
+from html.parser import HTMLParser
 try:
     import ckan.authz as authz
 except ImportError:
     import ckan.new_authz as authz
-import db
+from ckanext.pages import db
 
 
 def page_name_validator(key, data, errors, context):
@@ -46,19 +46,19 @@ class HTMLFirstImage(HTMLParser):
 
 
 schema = {
-    'id': [p.toolkit.get_validator('ignore_empty'), unicode],
-    'title': [p.toolkit.get_validator('not_empty'), unicode],
-    'name': [p.toolkit.get_validator('not_empty'), unicode,
+    'id': [p.toolkit.get_validator('ignore_empty'), str],
+    'title': [p.toolkit.get_validator('not_empty'), str],
+    'name': [p.toolkit.get_validator('not_empty'), str,
              p.toolkit.get_validator('name_validator'), page_name_validator],
-    'content': [p.toolkit.get_validator('ignore_missing'), unicode],
-    'page_type': [p.toolkit.get_validator('ignore_missing'), unicode],
-    # 'lang': [p.toolkit.get_validator('not_empty'), unicode],
+    'content': [p.toolkit.get_validator('ignore_missing'), str],
+    'page_type': [p.toolkit.get_validator('ignore_missing'), str],
+    # 'lang': [p.toolkit.get_validator('not_empty'), str],
     'order': [p.toolkit.get_validator('ignore_missing'),
-              unicode],
+              str],
     'private': [p.toolkit.get_validator('ignore_missing'),
                 p.toolkit.get_validator('boolean_validator')],
-    'group_id': [p.toolkit.get_validator('ignore_missing'), unicode],
-    'user_id': [p.toolkit.get_validator('ignore_missing'), unicode],
+    'group_id': [p.toolkit.get_validator('ignore_missing'), str],
+    'user_id': [p.toolkit.get_validator('ignore_missing'), str],
     'created': [p.toolkit.get_validator('ignore_missing'),
                 p.toolkit.get_validator('isodate')],
     'publish_date': [not_empty_if_blog,

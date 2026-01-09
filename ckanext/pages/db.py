@@ -5,16 +5,19 @@ import json
 import sqlalchemy as sa
 from sqlalchemy.orm import class_mapper
 try:
-    from sqlalchemy.engine.result import RowProxy
-except Exception:
-    from sqlalchemy.engine.base import RowProxy
+    from sqlalchemy.engine.row import Row as RowProxy
+except ImportError:
+    try:
+        from sqlalchemy.engine.result import RowProxy
+    except ImportError:
+        from sqlalchemy.engine.base import RowProxy
 
 pages_table = None
 Page = None
 
 
 def make_uuid():
-    return unicode(uuid.uuid4())
+    return str(uuid.uuid4())
 
 
 def init_db(model):
@@ -152,7 +155,7 @@ def table_dictize(obj, context, **kw):
         elif isinstance(value, list):
             result_dict[name] = value
         else:
-            result_dict[name] = unicode(value)
+            result_dict[name] = str(value)
 
     result_dict.update(kw)
 

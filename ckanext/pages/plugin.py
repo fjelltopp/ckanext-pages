@@ -1,13 +1,12 @@
 import cgi
 import logging
 import urllib
-from pylons import config
 import ckan.plugins.toolkit as toolkit
 import ckan.plugins as p
 import ckan.lib.helpers as h
 from ckan.common import _
-import actions
-import auth
+from ckanext.pages import actions
+from ckanext.pages import auth
 
 ignore_missing = toolkit.get_validator('ignore_missing')
 
@@ -25,9 +24,9 @@ log = logging.getLogger(__name__)
 
 def build_pages_nav_main(*args):
 
-    about_menu = toolkit.asbool(config.get('ckanext.pages.about_menu', True))
-    group_menu = toolkit.asbool(config.get('ckanext.pages.group_menu', True))
-    org_menu = toolkit.asbool(config.get('ckanext.pages.organization_menu', True))
+    about_menu = toolkit.asbool(toolkit.config.get('ckanext.pages.about_menu', True))
+    group_menu = toolkit.asbool(toolkit.config.get('ckanext.pages.group_menu', True))
+    org_menu = toolkit.asbool(toolkit.config.get('ckanext.pages.organization_menu', True))
 
     # Different CKAN versions use different route names - gotta catch em all!
     about_menu_routes = ['about', 'home.about']
@@ -70,7 +69,7 @@ def build_pages_nav_main(*args):
 
 
 def render_content(content):
-    allow_html = toolkit.asbool(config.get('ckanext.pages.allow_html', False))
+    allow_html = toolkit.asbool(toolkit.config.get('ckanext.pages.allow_html', False))
     try:
         return h.render_markdown(content, allow_html=allow_html)
     except TypeError:
@@ -79,7 +78,7 @@ def render_content(content):
 
 
 def get_wysiwyg_editor():
-    return config.get('ckanext.pages.editor', '')
+    return toolkit.config.get('ckanext.pages.editor', '')
 
 
 def get_recent_blog_posts(number=5, exclude=None):
@@ -105,20 +104,19 @@ def get_plus_icon():
 
 
 def get_blog_used():
-    return config.get('ckanext.pages.blog', "True") == "True"
+    return toolkit.config.get('ckanext.pages.blog', "True") == "True"
 
 
 class PagesPlugin(PagesPluginBase):
     p.implements(p.IConfigurer, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
     p.implements(p.IConfigurable, inherit=True)
-    p.implements(p.IRoutes, inherit=True)
     p.implements(p.IActions, inherit=True)
     p.implements(p.IAuthFunctions, inherit=True)
 
     def update_config(self, config):
-        self.organization_pages = toolkit.asbool(config.get('ckanext.pages.organization', False))
-        self.group_pages = toolkit.asbool(config.get('ckanext.pages.group', False))
+        self.organization_pages = toolkit.asbool(toolkit.config.get('ckanext.pages.organization', False))
+        self.group_pages = toolkit.asbool(toolkit.config.get('ckanext.pages.group', False))
 
         toolkit.add_template_directory(config, 'theme/templates_main')
         if self.group_pages:
